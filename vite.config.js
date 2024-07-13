@@ -9,7 +9,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, "src/index.html"),
-        summary: resolve(__dirname, "src/breach-summary/index.html"),
+        summary: resolve(__dirname, "src/emailBreachSummary/index.html"),
         details: resolve(__dirname, "src/breach-detail/index.html"),
       },
     },
