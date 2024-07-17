@@ -1,8 +1,8 @@
-import  emailBreachList from "./breach-summary.mjs"
-import { getLocalStorage } from "./utils.mjs";
+import  emailBreachList from "./breachSummary.mjs"
+import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
 
-console.log("THIS IS EMAIL BREACH JS");
 
+loadHeaderFooter();
 
 const email = getLocalStorage("is-email");
 emailBreachList("emailBreachList", email)

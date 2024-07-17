@@ -1,9 +1,9 @@
-import { setLocalStorage } from "./utils.mjs";
-
+import { setLocalStorage, loadHeaderFooter } from "./utils.mjs";
 const baseURL = import.meta.env.EXPOSEDORNOT_SERVER_URL;
 
-const emailForm = document.getElementById("getEmailForm");
+loadHeaderFooter();
 
+const emailForm = document.getElementById("getEmailForm");
 emailForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = emailForm.email.value

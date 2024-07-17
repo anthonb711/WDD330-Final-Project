@@ -39,6 +39,49 @@ export function renderNoBreach(email) {
   listTilte.innerHTML = '<h2 class="secure">' + email + ' is secure! No breaches were found.' + '</h2>';
 }
 
+function loadTemplate(path) {
+  return async function () {
+    const res = await fetch(path);
+    if (res.ok) {
+      const html = await res.text();
+      return html;
+    }
+  };
+}
+
+export async function renderWithTemplate(
+  templateFn,
+  parentElement,
+  data,
+  callback,
+  position = "afterbegin",
+  clear = true
+) {
+  // get template using function...no need to loop this time.
+  if (clear) {
+    parentElement.innerHTML = "";
+  }
+  const htmlString = await templateFn(data);
+  parentElement.insertAdjacentHTML(position, htmlString);
+
+  if (callback) {
+    callback(data);
+  }
+}
+
+export function loadHeaderFooter() {
+
+
+  const headerTemplateFN = loadTemplate("/partials/header.html");
+  const footerTemplateFN = loadTemplate("/partials/footer.html");
+
+  const headerEl = document.getElementById("header");
+  const footerEl = document.getElementById("footer");
+
+  renderWithTemplate(headerTemplateFN, headerEl);
+  renderWithTemplate(footerTemplateFN, footerEl);
+}
+
 // export function filterProducts(products, limit = 4) {
 //   return products.slice(0, limit);
 // }
