@@ -34,6 +34,12 @@ export function renderListWithTemplate(
     .insertAdjacentHTML(position, htmlStrings.join(""));
 }
 
+export function renderNoBreach(email) {
+  const listTilte = document.getElementById("list-title");
+  listTilte.innerHTML = '<h2 class="secure">' + email + ' is secure! No breaches were found.' + '</h2>';
+}
+
 // export function filterProducts(products, limit = 4) {
 //   return products.slice(0, limit);
 // }
+

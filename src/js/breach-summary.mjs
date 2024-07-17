@@ -1,19 +1,27 @@
 import { getBreachListByEmail, getBreachMetricsByEmail, getBreachMetricsByBreach } from "./external-services.mjs";
 
-import { renderListWithTemplate } from "./utils.mjs"
+import { renderListWithTemplate, renderNoBreach } from "./utils.mjs"
 
 export default async function emailBreachList(selector, email) {
-  const breachDetail = await getBreachMetricsByEmail(email)
-  const breachList = breachDetail.ExposedBreaches.breaches_details;
-  console.log("b-s.mjs:7 BREACH LIST DETAIL", breachList)
-  renderListWithTemplate(emailBreachTemplateCard, selector, breachList);
+  try {
+    const breachDetail = await getBreachMetricsByEmail(email)
 
-  //const breachList = await getBreachListByEmail(email)
-  //const breachDetail = await getBreachMetricsByBreach("8fit.com") MOVE TO BREACH DETAIL
+    const breachList = breachDetail.ExposedBreaches.breaches_details;
+    console.log("b-s.mjs:7 BREACH LIST DETAIL", breachList)
+    renderListWithTemplate(emailBreachTemplateCard, selector, breachList);
 
-  //console.log(breachList);
-  console.log(breachDetail);
-  //console.log(breachDetail);
+    //const breachList = await getBreachListByEmail(email)
+    //const breachDetail = await getBreachMetricsByBreach("8fit.com") MOVE TO BREACH DETAIL
+
+    //console.log(breachList);
+    console.log(breachDetail);
+    //console.log(breachDetail);
+
+  }catch (error) {
+  console.log("NO BREACH FOUND");
+    renderNoBreach(email);
+  }
+  
 }
 
 

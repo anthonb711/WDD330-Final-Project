@@ -10,7 +10,7 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, "src/index.html"),
         summary: resolve(__dirname, "src/emailBreachSummary/index.html"),
-        details: resolve(__dirname, "src/breach-detail/index.html"),
+        details: resolve(__dirname, "src/breachDetail/index.html"),
       },
     },
   },
