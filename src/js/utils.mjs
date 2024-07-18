@@ -82,6 +82,8 @@ export function loadHeaderFooter() {
   renderWithTemplate(footerTemplateFN, footerEl);
 }
 
+
+
 // export function filterProducts(products, limit = 4) {
 //   return products.slice(0, limit);
 // }

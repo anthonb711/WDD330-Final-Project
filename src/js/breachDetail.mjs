@@ -5,16 +5,16 @@ export async function renderBreachDetail(selector, domain) {
 
   try {
     const breach = await getBreachMetricsByBreach(domain)
+    if (!breach){
+      window.location.href="../index.html"
+    }
     const breachDetail = breach.exposedBreaches[0];
     console.log("THIS IS DOMAIN BREACH DETAIL", breachDetail); //TODO: REMOVE
     const parentElement = document.getElementById(selector);
 
     renderWithTemplate(breachDetailTemplateCard, parentElement, breachDetail)
 
-  }catch (error) {
-    console.error(error)
-  }
-  
+  }catch (error) {}
 }
 
 function breachDetailTemplateCard(breach) {

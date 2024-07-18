@@ -15,3 +15,18 @@ emailForm.addEventListener("submit", (e) => {
     window.location.href="../emailBreachSummary/index.html"
   }
 });
+
+const domainForm = document.getElementById("getDomainForm");
+domainForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const domain = domainForm.domain.value
+  console.log("This is domain formvalue", domain)
+  const chk_status = domainForm.checkValidity();
+  domainForm.reportValidity();
+
+  if (chk_status && domain.match(/^[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/)) {
+    window.location.href=`../breachDetail/index.html?breach=${domain}`
+  } else {
+    alert('Please enter a valid domain name.');
+  }
+});

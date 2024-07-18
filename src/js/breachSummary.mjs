@@ -1,5 +1,5 @@
 import {  getBreachMetricsByEmail } from "./external-services.mjs";
-import { renderListWithTemplate, renderNoBreach } from "./utils.mjs"
+import { renderListWithTemplate, renderNoBreach, setLocalStorage } from "./utils.mjs"
 
 export default async function emailBreachList(selector, email) {
   try {

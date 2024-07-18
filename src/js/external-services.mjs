@@ -10,24 +10,27 @@ export async function convertToJson(res) {
   }
 }
 
-export async function getBreachListByEmail(email) {
-const response = await fetch(`https://api.xposedornot.com/v1/check-email/${email}`);
-const result = await response.json();
-
-return result.breaches[0];
-}
-
 export async function getBreachMetricsByEmail(email) {
-  const response = await fetch(`https://api.xposedornot.com/v1/breach-analytics?email=${email}`);
-  const data = await convertToJson(response)
+  try {
+    const response = await fetch(`https://api.xposedornot.com/v1/breach-analytics?email=${email}`);
+    if(!response.ok) {
+      throw new Error(`Request failed with: ${response.status}`)
+    }
+    const data = await convertToJson(response)
+    return data;
 
-  return data;
+  }catch (error) {}
 }
 
 export async function getBreachMetricsByBreach(domain) {
-  const response = await fetch(`https://api.xposedornot.com/v1/breaches?domain=${domain}`);
-  const result = await response.json();
+  try {
+    const response = await fetch(`https://api.xposedornot.com/v1/breaches?domain=${domain}`);
+    if(!response.ok){
+      throw new Error(`Request failed with: ${response.status}`)
+    }
+    const result = await response.json();
+    return result;
 
-  return result;
+  }catch (error) {}
 }
 
