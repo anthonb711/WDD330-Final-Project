@@ -1,9 +1,9 @@
-import { loadHeaderFooter, getParam} from "./utils.mjs";
+import { loadHeaderFooter, getLocalStorage} from "./utils.mjs";
 import { renderBreachDetail } from "./breachDetail.mjs";
 
 loadHeaderFooter();
 
-const domain = getParam("breach");
+const domain = getLocalStorage("is-domain");
 renderBreachDetail("detail-list", domain);
 
 
