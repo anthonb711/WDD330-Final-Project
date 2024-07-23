@@ -23,20 +23,31 @@ export function renderListWithTemplate(
   position = "afterbegin",
   clear = true
 ) {
+ 
   const htmlStrings = list.map((item) => templateFn(item));
-  //const filter = filterProducts(htmlStrings);
-  
   const listTitle = document.getElementById("list-title");
- const email = getLocalStorage("is-email")
+  const email = getLocalStorage("is-email")
   listTitle.innerHTML = '<h2>' + email + '</h2>' + ' has been exposed in the following breaches';
   document
     .getElementById(parentElement)
     .insertAdjacentHTML(position, htmlStrings.join(""));
 }
 
-export function renderNoBreach(email) {
+export function renderNoBreach(type) {
+  const breachlist = document.getElementById("detail-list");
+  breachlist.innerHTML = ""
+
+    const breachTitle = document.getElementById("list-title");
+  breachTitle.innerHTML = ""
+
+  const breachType = getLocalStorage(`is-${type}`);
   const listTilte = document.getElementById("list-title");
-  listTilte.innerHTML = '<h2 class="secure">' + email + ' is secure! No breaches were found.' + '</h2>';
+  listTilte.innerHTML = ""
+  if(breachType) {
+    listTilte.innerHTML = '<h2>' + breachType + ' is secure!' + '</br></br>' + 'Check another ' + type +'!';
+  } else {
+    listTilte.innerText='Check another ' + type + ' now!';
+  }
 }
 
 function loadTemplate(path) {
@@ -71,7 +82,6 @@ export async function renderWithTemplate(
 
 export function loadHeaderFooter() {
 
-
   const headerTemplateFN = loadTemplate("/partials/header.html");
   const footerTemplateFN = loadTemplate("/partials/footer.html");
 
@@ -81,10 +91,3 @@ export function loadHeaderFooter() {
   renderWithTemplate(headerTemplateFN, headerEl);
   renderWithTemplate(footerTemplateFN, footerEl);
 }
-
-
-
-// export function filterProducts(products, limit = 4) {
-//   return products.slice(0, limit);
-// }
-

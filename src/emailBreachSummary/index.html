@@ -13,16 +13,20 @@
     <div id="body" class="container">
     <header id="header" class="section"></header>
     <main id="main" class="divider">
-      <section id="hero" class="section">
-        Hero Image Here
-      </section>
-      <section id="intro-text" class="section">
-        Here is the website description
-      </section>
-
+      <section class="section">
+      <form name="getEmailForm" id="getEmailForm">
+            <label class="input">
+              Email
+            <input type="email" name="email"  placeholder="example@example.com" required>
+            </label>
+            <label>
+               <button class="submit" type="submit">Check Email</button>
+            </label>
+          </form>
+          </section>
      <section id="summary-sec" class="section">
-          <h2 id="list-title">Email Breach Summary</h2>
-        <ul id="emailBreachList" class="emailSummaryList"></ul>
+          <h2 id="list-title"></h2>
+        <ul id="detail-list" class="emailSummaryList"></ul>
       </section>
 
     </main>

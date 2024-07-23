@@ -1,10 +1,90 @@
-.section {
-  box-shadow: 0 0 10px rgba(0,0,0, 0.5);
-  padding: 5px;
-  margin: 10px;
+:root {
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  /* colors */
+  --primary-color: rgb(7, 93, 136);;
+  --secondary-color: #525b0f;
+  --tertiary-color: #a4b8c4;
+  --light-grey: #d0d0d0;
+  --dark-grey: #303030;
+  --red: red;
+
+  /* sizes */
+  --font-base: 18px;
+  --small-font: 0.8em;
+  --large-font: 1.2em;
 }
 
-.domain-logo {
-  width: 100px;
-  height: 100px;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(7, 93, 136);
+}
+
+.site-name {
+  width: 100%;
+  color: var(--primary-color);
+  font-size: var(--large-font)
+}
+header {
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.hero {
+  text-align: center;
+}
+
+
+
+img {
+  max-width: 75%;
+  max-height: auto;
+}
+
+.nav-container{
+  display: flex;
+  width: 75%;
+  height: 10vh;
+
+}
+
+#navList a {
+  text-decoration: none;
+  padding-top: 15px;
+  color:#d0d0d0;
+  font-size: 1.75em;
+}
+
+#navList {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.819);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  margin: 10px;
+  padding: 25px;
+  list-style: none;
+}
+
+
+.section {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.819);
+  max-width: 1500px;
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
+  background-color: #d0d0d0;
+}
+
+#intro-text {
+  text-align: justify;
+  font-size: var(--large-font);
 }

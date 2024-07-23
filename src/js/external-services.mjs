@@ -1,3 +1,5 @@
+import { renderNoBreach } from "./utils.mjs";
+
 const baseURL = import.meta.env.EXPOSEDORNOT_SERVER_URL;
 
 export async function convertToJson(res) {
@@ -11,16 +13,17 @@ export async function convertToJson(res) {
 }
 
 export async function getBreachMetricsByEmail(email) {
-  try {
-    const response = await fetch(`https://api.xposedornot.com/v1/breach-analytics?email=${email}`);
-    if(!response.ok) {
-      throw new Error(`Request failed with: ${response.status}`)
-    }
-    const data = await convertToJson(response)
-    return data;
+    try {
+     const response = await fetch(`https://api.xposedornot.com/v1/breach-analytics?email=${email}`);
+      if(!response.ok) {
+       throw new Error(`Request failed with: ${response.status} `)
+      }
+      const data = await convertToJson(response)
+      return data;
 
-  }catch (error) {}
+    }catch (error) {}
 }
+
 
 export async function getBreachMetricsByBreach(domain) {
   try {

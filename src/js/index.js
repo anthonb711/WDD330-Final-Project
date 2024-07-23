@@ -1,7 +1,7 @@
-import { setLocalStorage, loadHeaderFooter } from "./utils.mjs";
+import { setLocalStorage, loadHeaderFooter} from "./utils.mjs";
 const baseURL = import.meta.env.EXPOSEDORNOT_SERVER_URL;
 
-loadHeaderFooter();
+ loadHeaderFooter();
 
 const emailForm = document.getElementById("getEmailForm");
 emailForm.addEventListener("submit", (e) => {
@@ -30,3 +30,5 @@ domainForm.addEventListener("submit", (e) => {
     alert('Please enter a valid domain name.');
   }
 });
+
+

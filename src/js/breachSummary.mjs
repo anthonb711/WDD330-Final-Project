@@ -2,13 +2,16 @@ import {  getBreachMetricsByEmail } from "./external-services.mjs";
 import { renderListWithTemplate, renderNoBreach, setLocalStorage } from "./utils.mjs"
 
 export default async function emailBreachList(selector, email) {
-  try {
-    const breachDetail = await getBreachMetricsByEmail(email)
-    const breachList = breachDetail.ExposedBreaches.breaches_details;
-    renderListWithTemplate(emailBreachTemplateCard, selector, breachList);
-  }catch (error) {
-  console.log("NO BREACH FOUND");
-    renderNoBreach(email);
+  if(email){
+    try {
+      const breachDetail = await getBreachMetricsByEmail(email)
+      const breachList = breachDetail.ExposedBreaches.breaches_details;
+      renderListWithTemplate(emailBreachTemplateCard, selector, breachList);
+    }catch (error) {
+      renderNoBreach("email");
+    }
+  } else {
+    renderNoBreach("email");
   }
 }
 
@@ -22,3 +25,16 @@ function emailBreachTemplateCard(breach) {
 </a>
   </li>`;
 }
+
+const emailForm = document.getElementById("getEmailForm");
+emailForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = emailForm.email.value
+  const chk_status = emailForm.checkValidity();
+  emailForm.reportValidity();
+
+  if (chk_status) {
+    setLocalStorage("is-email", email)
+    emailBreachList("emailBreachList", email)
+  }
+});

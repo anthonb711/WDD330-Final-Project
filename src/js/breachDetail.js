@@ -4,4 +4,8 @@ import { renderBreachDetail } from "./breachDetail.mjs";
 loadHeaderFooter();
 
 const domain = getParam("breach");
-renderBreachDetail("detail-div", domain);
+renderBreachDetail("detail-list", domain);
+
+
+
+
