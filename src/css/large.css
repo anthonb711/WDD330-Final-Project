@@ -1,4 +1,69 @@
 @media (min-width: 1200px) {
-
+  input, button {
+    border: .25em rgb(0, 40, 99) solid;
+    min-width: 150px;
+    min-height: 50px;
+    margin-left: 0;
+  }
   
+  input {
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    margin-right: 0;
+  }
+  
+  button {
+    min-width: 150px;
+    min-height: 50px;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    translate: -5px;
+  }
+  
+  label.input {
+    width: 0;
+    height: 0;
+  }
+
+  #domain-domain-form {
+    display: inline;
+    height: 300px;
+  }
+
+  #domain-input {
+    min-width: 300px;
+  }
+
+  #domain-button {
+    margin-left: 0;
+    translate: -10px;
+  }
+
+  #email-email-form {
+    display: inline;
+    height: 300px;
+  }
+
+  #email-input {
+     min-width: 300px;
+  }
+
+  #email-button {
+    margin-left: 0;
+    translate: -10px;
+  }
+  #detail-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+  }
+
+  .breach-card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.819);
+    padding: 10px;
+    padding-top: 50px;
+    border-radius: 15px;
+    margin: 10px;
+  }
 }

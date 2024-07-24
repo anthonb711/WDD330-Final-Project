@@ -20,7 +20,8 @@ const domainForm = document.getElementById("getDomainForm");
 domainForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const domain = domainForm.domain.value
-  console.log("This is domain formvalue", domain)
+  setLocalStorage("is-domain", domain)
+
   const chk_status = domainForm.checkValidity();
   domainForm.reportValidity();
 

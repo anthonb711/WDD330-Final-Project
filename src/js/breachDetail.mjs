@@ -1,5 +1,6 @@
 import { getBreachMetricsByBreach } from "./external-services.mjs";
-import { renderNoBreach, renderWithTemplate, setLocalStorage } from "./utils.mjs";
+import { formatRisk, renderNoBreach, formatDate,
+        renderWithTemplate, setLocalStorage } from "./utils.mjs";
 
 export async function renderBreachDetail(selector, domain) {
 
@@ -24,22 +25,25 @@ export async function renderBreachDetail(selector, domain) {
 }
 
 function breachDetailTemplateCard(breach) {
+  const risk = formatRisk(breach.passwordRisk);
+  const breachDate = formatDate(breach.breachedDate)
+ 
   return `<li class="breachDetail-card">
     <img class="domain-logo" src="https://img.logo.dev/${breach.domain}?token=pk_WbfOaO3vRvO-5UZ_c5_Rwg" />
-    <h2>${breach.breachID}</h2>
+    <h2 id="breachID">${breach.breachID}</h2>
       <p class="description">${breach.exposureDescription}</p>
-      <h3>Breach Stats:</h3>
+      <h3 id="stats">Breach Stats:</h3>
       <ul class="detailList">
-        <li class="detailList">Domain: ${breach.domain}</li>
-        <li class="detailList">Date:   ${breach.breachedDate}</li>
-        <li class="detailList">Data Exposed: ${breach.exposedData.join(' | ')}</li>
-         <li class="detailList">Password Strength: ${breach.passwordRisk}</li>
-        <li class="detailList">Expose Records: ${breach.exposedRecords}</li>
+        <li class="detailList"><strong>Domain:</strong> ${breach.domain}</li>
+        <li class="detailList"><strong>Date:</strong>   ${breachDate}</li>
+        <li class="detailList"><strong>Data Exposed:</strong> ${breach.exposedData.join(' | ')}</li>
+         <li class="detailList"><strong>Password Strength:</strong> ${risk}
+        <li class="detailList"><strong>Expose Records:</strong> ${new Intl.NumberFormat("en-IN").format(breach.exposedRecords)}</li>
       </ul>
   </li>`;
 }
 
-const domainForm = document.getElementById("getDomainForm");
+const domainForm = document.getElementById("domain-domain-form");
 domainForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const domain = domainForm.domain.value

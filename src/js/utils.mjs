@@ -27,7 +27,7 @@ export function renderListWithTemplate(
   const htmlStrings = list.map((item) => templateFn(item));
   const listTitle = document.getElementById("list-title");
   const email = getLocalStorage("is-email")
-  listTitle.innerHTML = '<h2>' + email + '</h2>' + ' has been exposed in the following breaches';
+  listTitle.innerText = 'Exposure list for ' + email;
   document
     .getElementById(parentElement)
     .insertAdjacentHTML(position, htmlStrings.join(""));
@@ -90,4 +90,24 @@ export function loadHeaderFooter() {
 
   renderWithTemplate(headerTemplateFN, headerEl);
   renderWithTemplate(footerTemplateFN, footerEl);
+}
+
+export function formatRisk (risk) {
+  switch(risk) {
+    case "hardtocrack":
+      return "Hard To Crack";
+    case "easytocrack":
+      return "Easy To Crack";
+    case "unknown":
+      return "Unknown";
+    case "plaintext":
+      return "PlainText";
+  }
+}
+
+export function formatDate(breachDate) {
+  const date = new Date(breachDate);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Intl.DateTimeFormat('en-US', options).format(date);
+
 }

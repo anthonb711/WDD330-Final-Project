@@ -5,7 +5,7 @@ import { getLocalStorage, loadHeaderFooter } from "./utils.mjs";
 loadHeaderFooter();
 
 const email = getLocalStorage("is-email");
-emailBreachList("detail-div", email)
+emailBreachList("detail-list", email)
 
 
 

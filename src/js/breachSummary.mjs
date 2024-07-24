@@ -3,11 +3,19 @@ import { renderListWithTemplate, renderNoBreach, setLocalStorage } from "./utils
 
 export default async function emailBreachList(selector, email) {
   if(email){
+
     try {
       const breachDetail = await getBreachMetricsByEmail(email)
+
+      if(breachDetail.BreachesSummary.domain == "") {
+        renderNoBreach("email")
+      }else {
       const breachList = breachDetail.ExposedBreaches.breaches_details;
+
       renderListWithTemplate(emailBreachTemplateCard, selector, breachList);
+      }
     }catch (error) {
+      console.error(error);
       renderNoBreach("email");
     }
   } else {
@@ -17,16 +25,15 @@ export default async function emailBreachList(selector, email) {
 
 
 function emailBreachTemplateCard(breach) {
-  console.log("B_S: 3 THIS IS TEMPLATE BREACH CARD", breach.domain);
   return `<li class="breach-card">
-    <a href="/breachDetail/index.html?breach=${breach.domain}">
+    <a id="emailBreachLink" href="/breachDetail/index.html?breach=${breach.domain}">
 <img src="https://img.logo.dev/${breach.domain}?token=pk_WbfOaO3vRvO-5UZ_c5_Rwg" />
       <h3 class="card__brand">${breach.domain}</h3>
 </a>
   </li>`;
 }
 
-const emailForm = document.getElementById("getEmailForm");
+const emailForm = document.getElementById("email-email-form");
 emailForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = emailForm.email.value
@@ -35,6 +42,6 @@ emailForm.addEventListener("submit", (e) => {
 
   if (chk_status) {
     setLocalStorage("is-email", email)
-    emailBreachList("emailBreachList", email)
+    emailBreachList("detail-list", email)
   }
 });
