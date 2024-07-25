@@ -11,40 +11,49 @@
   <body>
     <script src="/js/index.js" type="module"></script>
     <div id="body" class="container">
-    <header id="header" class="section"></header>
-    <section id="intro-text" class="section">
-      <p>
-      It seems every month we read of the newest data breach. As we live more and more online we are increasing our risk to our own personal data being caught up in the next breach. When thousands of records are exposed can be nearly impossible for you to know if your personal data has been comprimised. Thats where <strong>IdentiSafe</strong> comes in!</p>
-      
-      <p>Our mission is to keep you informed. We handle the heavy lifiting and sift through 1000's of breachs and provide you with the details of your personalized exposure risk. You can check your email address against our comprehensive breach database, or check to see if a website has experienced a breach. Knowing your exposure is the first step in protecting your data. Check your exposure now!
-      </p>
-    </section>
-    <main id="main" class="divider">
-      <section id="reqest-forms" class="section">
-        <div class="form-div">
-          <form name="getEmailForm" id="getEmailForm">
-            <label class="input"> 
-              <span>Has your email been breached?</span>
-              <input type="email" name="email" placeholder="example@example.com" required>
-            </label>
-            <label>
-               <button class="submit" type="submit">Check Email</button>
-            </label>
-          </form>
-          <form name="getDomainForm" id="getDomainForm">
-            <label class="input">
-              <span>Has a website you use been hacked?</span>
-              <input type="domain" name="domain" placeholder="example.com" required >
-            </label>
-            <label>
-               <button class="submit" type="submit">Check Domain</button>
-            </label>
-          </form>
-        </div>
-      </section>
-    </main>
-    <footer id="footer" class="section"></footer>
+      <header id="header" class="section"></header>
+      <section id="intro-text" class="section"></section>
+      <main id="main" class="divider">
+        <section id="reqest-forms" class="section">
+          <div class="form-div">
+            <form name="getEmailForm" id="getEmailForm">
+              <label class="input">
+                <span>Has your email been breached?</span>
+                <input
+                  id="email-input"
+                  type="email"
+                  name="email"
+                  placeholder="example@example.com"
+                  required
+                />
+              </label>
+              <label>
+                <button id="email-button" class="submit" type="submit">
+                  Check Email
+                </button>
+              </label>
+            </form>
+            <form name="getDomainForm" id="getDomainForm">
+              <label class="input">
+                <span>Has a website you use been hacked?</span>
+                <input
+                  id="domain-input"
+                  type="domain"
+                  name="domain"
+                  placeholder="example.com"
+                  required
+                />
+              </label>
+              <label>
+                <button id="domain-button" class="submit" type="submit">
+                  Check Domain
+                </button>
+              </label>
+            </form>
+          </div>
+        </section>
+      </main>
+      <footer id="footer" class="section"></footer>
     </div>
-
   </body>
 </html>

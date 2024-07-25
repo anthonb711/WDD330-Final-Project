@@ -33,6 +33,7 @@ body {
   font-size: var(--large-font);
   font-family: var(--font-headline);
 }
+
 header {
   justify-content: space-between;
   padding: 0 10px;
@@ -42,12 +43,10 @@ header {
   margin-top: 20px;
   text-align: center;
 }
-
-
-
 img {
   max-width: 100%;
   max-height: auto;
+
 }
 
 .nav-container{
@@ -60,7 +59,6 @@ img {
 li {
   list-style: none;
 }
-
 
 #navList a {
   text-decoration: none;
@@ -88,6 +86,7 @@ li {
 
 .section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.819);
+  border-radius: 10px;
   max-width: 1500px;
   padding: 5px;
   margin: 10px;
@@ -111,7 +110,7 @@ strong{
   display: grid;
 }
 
-#getEmailForm {
+#email-email-form {
   border-right: 3px var(--primary-color) solid;
   grid-column: 1;
   grid-row: 1;
@@ -123,7 +122,6 @@ label {
   font-weight: bolder;
   font-family: var(--font-headline);
 }
-
 
 input, button {
   border: 5px rgb(0, 40, 99) solid;
@@ -166,8 +164,6 @@ button:hover {
   grid-column: 2;
   grid-row: 1;
 }
-
-
 
 #email-email-form {
   display: grid;
@@ -236,9 +232,9 @@ hr {
 
 .description {
   font-family: var(--font-body);
-  text-align: justify;
+  text-align:justify;
   padding: 20px;
-
+  font-size: 1.5em;
 }
 
 #detail-list {
@@ -256,11 +252,14 @@ hr {
 #stats {
   font-family: var(--font-headline);
   font-size: 1.75em;
+  text-align: left;
 }
 
 .detailList {
   font-family: var(--font-body);
   text-align: justify;
+  font-size: 1.3em;
+  padding: 5px;
 }
 
 .breach-card {
@@ -279,6 +278,33 @@ hr {
 }
 
 .card__brand {
+}
+
+.footer-span {
+  padding-top: 20px;
+  font-family: var(--font-headline);
+  color: var(--primary-color);
+  font-size: 1.50em;
+  font-weight: 700;
+}
+
+span {
+  display: inline-flex;
+  min-height:94px ;
+}
+
+#detail-card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.819);
+  margin: 60px;
+  padding: 10px;
+  padding-top: 50px;
+  border-radius: 15px;
+  background-color: #d0d0d0;
+  color:#1f1f1f;
+}
+
+#breachID, #stats {
+  color: var(--primary-color);
 }
 
 

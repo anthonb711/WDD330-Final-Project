@@ -28,7 +28,7 @@ function breachDetailTemplateCard(breach) {
   const risk = formatRisk(breach.passwordRisk);
   const breachDate = formatDate(breach.breachedDate)
  
-  return `<li class="breachDetail-card">
+  return `<li id="detail-card" class="breachDetail-card">
     <img class="domain-logo" src="https://img.logo.dev/${breach.domain}?token=pk_WbfOaO3vRvO-5UZ_c5_Rwg" />
     <h2 id="breachID">${breach.breachID}</h2>
       <p class="description">${breach.exposureDescription}</p>
@@ -54,7 +54,7 @@ domainForm.addEventListener("submit", (e) => {
 
   if (chk_status && domain.match(/^[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/)) {
     setLocalStorage("is-domain", domain)
-    renderBreachDetail("detail-list", domain);
+    renderBreachDetail("domain-detail-list", domain);
   } else {
     alert('Please enter a valid domain name.');
   }

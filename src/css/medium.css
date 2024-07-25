@@ -1,24 +1,22 @@
 @media (min-width: 899px) and (max-width: 1199px) {
-
-  input, button {
-        border: .25em rgb(0, 40, 99) solid;
-        min-width: 150px;
-        min-height: 50px;
-        margin-left: 0;
+  input,
+  button {
+    border: 0.25em rgb(0, 40, 99) solid;
+    min-width: 150px;
+    min-height: 50px;
+    margin-left: 0;
   }
   input {
     border-right: none;
     border-radius: 10px 0 0 10px;
     margin-right: 0;
-
-  } 
+  }
 
   button {
     min-width: 150px;
-    min-height: 50px;
     border-left: none;
     border-radius: 0 10px 10px 0;
-    translate: -5px;
+    translate: -15px;
   }
 
   label.input {
@@ -29,10 +27,11 @@
   #email-email-form {
     display: inline;
     height: 300px;
+    border-right: none;
   }
 
   #email-input {
-    min-width: 300px;
+    min-width: 250px;
   }
 
   #email-button {
@@ -44,14 +43,19 @@
     display: inline;
     height: 300px;
   }
-    
-  #domain-input {
-    min-width: 300px;
+
+  span {
+    display: inline-flex;
+    height: 77px;
   }
-    
+
+  #domain-input {
+    min-width: 250px;
+  }
+
   #domain-button {
     margin-left: 0;
-      translate: -10px;
+    translate: -15px;
   }
 
   #detail-list {
@@ -59,11 +63,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
-  
+
   .breach-card {
     margin-top: 20px;
     padding: 10px;
   }
-
-
 }
