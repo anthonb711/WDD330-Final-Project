@@ -1,0 +1,43 @@
+@media (min-width: 500px) and (max-width: 800px) {
+  .section {
+    max-width: 90vw;
+  }
+
+  #intro-text {
+    font-size: 1.40em;
+    line-height: 1.25em;
+  }
+  #navList a {
+    font-size: 1.25em;
+  }
+
+  #email-sec {
+    border-right: none;
+  }
+.main-span {
+  display: inline-flex;
+  text-align: center;
+  font-size: .60em;
+  max-width: 175px;
+}
+
+input, button {
+  min-width: 175px;
+  font-size: .45em;
+
+}
+
+#email-email-form {
+
+}
+
+#emailFormLabel {
+
+}
+#email-input {
+
+}
+
+
+
+}

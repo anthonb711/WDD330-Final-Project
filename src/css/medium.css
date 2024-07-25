@@ -1,4 +1,4 @@
-@media (min-width: 899px) and (max-width: 1199px) {
+@media (min-width: 801px) and (max-width: 1199px) {
   input,
   button {
     border: 0.25em rgb(0, 40, 99) solid;
@@ -68,4 +68,8 @@
     margin-top: 20px;
     padding: 10px;
   }
+
+        #email-sec {
+          border-right: none;
+        }
 }

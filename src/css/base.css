@@ -1,13 +1,9 @@
 :root {
   --font-body: Arial, Helvetica, sans-serif;
   --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
   /* colors */
-  --primary-color: rgb(7, 93, 136);;
-  --secondary-color: #525b0f;
-  --tertiary-color: #3178a5;
-  --light-grey: #d0d0d0;
-  --dark-grey: #303030;
-  --red: red;
+  --primary-color: rgb(7, 93, 136);
 
   /* sizes */
   --font-base: 18px;
@@ -42,6 +38,7 @@ header {
 .hero {
   margin-top: 20px;
   text-align: center;
+
 }
 img {
   max-width: 100%;
@@ -53,7 +50,6 @@ img {
   display: flex;
   width: 75%;
   height: 10vh;
-
 }
 
 li {
@@ -64,7 +60,7 @@ li {
   text-decoration: none;
   padding-top: 15px;
   color:#d0d0d0;
-  font-size: 1.75em;
+  font-size: 1.25em;
 }
 
 #navList {
@@ -87,7 +83,7 @@ li {
 .section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.819);
   border-radius: 10px;
-  max-width: 1500px;
+  max-width: 90vw;
   padding: 5px;
   margin: 10px;
   text-align: center;
@@ -111,7 +107,6 @@ strong{
 }
 
 #email-email-form {
-  border-right: 3px var(--primary-color) solid;
   grid-column: 1;
   grid-row: 1;
 }
@@ -165,20 +160,17 @@ button:hover {
   grid-row: 1;
 }
 
-#email-email-form {
-  display: grid;
-
-}
-
 #emailFormLabel {
     grid-column: 1; 
       grid-row: 1 ;
+      
 }
 
 #email-input {
   grid-column-start: 1;
     grid-row-start: 3;
   margin-top: 20px;
+  border-right:none;
 }
 
 #email-button {
@@ -223,11 +215,6 @@ button:hover {
 #email-button {
   grid-column: 1;
   grid-row: 3;
-}
-
-hr {
-  display: block;
-  margin: 30px ;
 }
 
 .description {
