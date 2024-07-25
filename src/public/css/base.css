@@ -1,0 +1,314 @@
+:root {
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  /* colors */
+  --primary-color: rgb(7, 93, 136);;
+  --secondary-color: #525b0f;
+  --tertiary-color: #3178a5;
+  --light-grey: #d0d0d0;
+  --dark-grey: #303030;
+  --red: red;
+
+  /* sizes */
+  --font-base: 18px;
+  --small-font: 0.8em;
+  --large-font: 1.2em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(7, 93, 136);
+}
+
+.site-name {
+  width: 100%;
+  color: var(--primary-color);
+  font-size: var(--large-font);
+  font-family: var(--font-headline);
+}
+
+header {
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.hero {
+  margin-top: 20px;
+  text-align: center;
+}
+img {
+  max-width: 100%;
+  max-height: auto;
+
+}
+
+.nav-container{
+  display: flex;
+  width: 75%;
+  height: 10vh;
+
+}
+
+li {
+  list-style: none;
+}
+
+#navList a {
+  text-decoration: none;
+  padding-top: 15px;
+  color:#d0d0d0;
+  font-size: 1.75em;
+}
+
+#navList {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.819);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  margin: 10px;
+  padding: 25px;
+  font-family: var(--font-body);
+
+}
+
+#navList a:hover {
+  color: #1f1f1f;
+}
+
+.section {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.819);
+  border-radius: 10px;
+  max-width: 1500px;
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
+  background-color: #d0d0d0;
+}
+
+#intro-text {
+  text-align: justify;
+  font-size: 1.75em;
+  padding: 25px;
+  line-height: 1.35em;
+  font-family: var(--font-body);
+}
+
+strong{
+  color: var(--primary-color);
+}
+
+.form-div{
+  display: grid;
+}
+
+#email-email-form {
+  border-right: 3px var(--primary-color) solid;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+label {
+  font-size: 2em;
+  color: var(--primary-color);
+  font-weight: bolder;
+  font-family: var(--font-headline);
+}
+
+input, button {
+  border: 5px rgb(0, 40, 99) solid;
+  text-align: center;
+  font-size: .65em;
+  min-width: 275px;
+  max-width: 275px;
+  font-family: var(--font-body);
+}
+
+input {
+  border-radius: 10px 10px 0 0;
+  border-bottom: none;
+  min-width: 275px;
+  height: 40px;
+  margin-top: 20px;
+}
+
+ input:focus {
+   outline: none;
+ }
+
+button {
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  background-color: var(--primary-color);
+  font-weight: 500;
+  color: #d0d0d0;
+  height: 40px;
+  margin-bottom: 20px;
+  translate: 0 -10px;
+}
+
+button:hover {
+  background-color: var(--tertiary-color);
+  color:#1f1f1f
+}
+
+#getDomainForm {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#email-email-form {
+  display: grid;
+
+}
+
+#emailFormLabel {
+    grid-column: 1; 
+      grid-row: 1 ;
+}
+
+#email-input {
+  grid-column-start: 1;
+    grid-row-start: 3;
+  margin-top: 20px;
+}
+
+#email-button {
+    grid-column: 1;
+      grid-row: 3;
+
+}
+
+#list-title {
+  font-family: var(--font-headline);
+  color:#d0d0d0;
+  font-size: 1.75em;
+}
+
+#emailBreachLink {
+  text-decoration: none;
+  font-size: var(--large-font);
+  font-family: var(--font-body);
+  color: var(--primary-color);
+}
+
+#emailBreachLink:visited {
+  text-decoration: none;
+}
+
+#domain-domain-form {
+  display: grid;
+}
+
+#domainFormLabel {
+  display: block;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#email-input {
+  grid-column: 1;
+  grid-row: 3;
+  margin-top: 20px;
+}
+
+#email-button {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+hr {
+  display: block;
+  margin: 30px ;
+}
+
+.description {
+  font-family: var(--font-body);
+  text-align:justify;
+  padding: 20px;
+  font-size: 1.5em;
+}
+
+#detail-list {
+  padding-left: 0;
+  line-height: 1.55em;
+  font-size: 1.25em;
+  
+}
+
+#breachID {
+  font-family: var(--font-headline);
+  font-size: 2em;
+}
+
+#stats {
+  font-family: var(--font-headline);
+  font-size: 1.75em;
+  text-align: left;
+}
+
+.detailList {
+  font-family: var(--font-body);
+  text-align: justify;
+  font-size: 1.3em;
+  padding: 5px;
+}
+
+.breach-card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.819);
+  margin: 60px;
+  padding: 10px;
+  padding-top: 50px;
+  border-radius: 15px;
+  background-color: #d0d0d0;
+}
+
+#summary-sec {
+  background-color: var(--primary-color);
+  color: #d0d0d0;
+  box-shadow: none;
+}
+
+.card__brand {
+}
+
+.footer-span {
+  padding-top: 20px;
+  font-family: var(--font-headline);
+  color: var(--primary-color);
+  font-size: 1.50em;
+  font-weight: 700;
+}
+
+span {
+  display: inline-flex;
+  min-height:94px ;
+}
+
+#detail-card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.819);
+  margin: 60px;
+  padding: 10px;
+  padding-top: 50px;
+  border-radius: 15px;
+  background-color: #d0d0d0;
+  color:#1f1f1f;
+}
+
+#breachID, #stats {
+  color: var(--primary-color);
+}
+
+
+
+
+
+

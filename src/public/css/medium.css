@@ -1,0 +1,71 @@
+@media (min-width: 899px) and (max-width: 1199px) {
+  input,
+  button {
+    border: 0.25em rgb(0, 40, 99) solid;
+    min-width: 150px;
+    min-height: 50px;
+    margin-left: 0;
+  }
+  input {
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    margin-right: 0;
+  }
+
+  button {
+    min-width: 150px;
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+    translate: -15px;
+  }
+
+  label.input {
+    width: 0;
+    height: 0;
+  }
+
+  #email-email-form {
+    display: inline;
+    height: 300px;
+    border-right: none;
+  }
+
+  #email-input {
+    min-width: 250px;
+  }
+
+  #email-button {
+    margin-left: 0;
+    translate: -10px;
+  }
+
+  #domain-domain-form {
+    display: inline;
+    height: 300px;
+  }
+
+  span {
+    display: inline-flex;
+    height: 77px;
+  }
+
+  #domain-input {
+    min-width: 250px;
+  }
+
+  #domain-button {
+    margin-left: 0;
+    translate: -15px;
+  }
+
+  #detail-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .breach-card {
+    margin-top: 20px;
+    padding: 10px;
+  }
+}
